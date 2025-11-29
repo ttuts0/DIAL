@@ -19,12 +19,10 @@
     <header class="header">
         <div class="container header-container">
             <a href="#" class="logo">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21 12L3 12M21 12L15 6M21 12L15 18" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+                <img src="logo.png" class="logo-icon" alt="DIAL logo">
                 <span>DIAL</span>
             </a>
+
             <nav class="nav">
                 <ul class="nav-list">
                     <li><a href="#waitlist">Waitlist</a></li>
@@ -54,77 +52,94 @@
             </div>
         </section>
 
-        <section id="waitlist" class="waitlist">
-            <div class="container waitlist-container">
-                <div class="waitlist-content">
-                    <h2 class="section-title">Join the DIAL Waitlist</h2>
-                    <p>Be part of the first group to access our upcoming launch. <strong>Limited early spots
-                            available!</strong></p>
+<section class="waitlist" id="waitlist">
+  <div class="container">
+    <div class="waitlist-container">
+      <div class="waitlist-inner">
+        
+        <!-- LEFT: same content as before -->
+        <div class="waitlist-content">
+          <h2>Join the DIAL Waitlist</h2>
+          <p>
+            Be part of the first group to access our upcoming launch.<br>
+            <strong>Limited early spots available!</strong>
+          </p>
 
-                    <form class="waitlist-form">
-                        <div class="form-group">
-                            <input type="text" placeholder="Your name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Your school or company">
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">Join Waitlist</button>
-                    </form>
-                </div>
-                <div class="waitlist-visual">
-                    <!-- Abstract visual or VR headset image -->
+          <form class="waitlist-form">
+            <div class="form-group">
+              <input type="text" placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Your email">
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="Your school or company">
+            </div>
+            <button type="submit" class="waitlist-button">
+              Join Waitlist
+            </button>
+          </form>
+        </div>
+
+        <!-- RIGHT: new image in the “empty” space -->
+        <div class="waitlist-image">
+          <img src="vr.png" alt="Immersive career exploration">
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section id="features" class="features features-corridor">
+    <div class="features-canvas-wrap">
+        <canvas id="features-canvas"></canvas>
+    </div>
+
+    <div class="container features-corridor-content">
+        <div class="features-corridor-body">
+            <!-- LEFT SIDE -->
+            <div class="features-corridor-copy">
+                <div class="features-corridor-header">
+                    <h2 class="section-title">AI-Driven<br>Career Exploration</h2>
+                    <p class="section-subtitle">
+                        Scroll to see the different ways DIAL turns “what if” careers into lived, immersive stories.
+                    </p>
                 </div>
             </div>
-        </section>
 
-        <section id="features" class="features">
-            <div class="container">
-                <div class="features-grid">
-                    <div class="features-intro">
-                        <h2 class="section-title">AI-Driven<br>Career Exploration</h2>
-                        <p class="section-subtitle">Discover immersive tools shaping your future.</p>
-                    </div>
-                    <div class="features-list">
-                        <div class="feature-item">
-                            <h3>Interactive VR Environments</h3>
-                            <p>Step inside realistic career settings tailored for you.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h3>Personalized Storytelling</h3>
-                            <p>Engage with narratives crafted to your interests and goals.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h3>Education-Workforce Bridge</h3>
-                            <p>Connect learning experiences directly to career pathways.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h3>Career Insights Analytics</h3>
-                            <p>Leverage data to make informed decisions about your career.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h3>Adaptive Learning Paths</h3>
-                            <p>Customize your journey with evolving guidance and support.</p>
-                        </div>
-                    </div>
+            <!-- RIGHT SIDE -->
+            <div class="features-steps">
+                <div class="feature-step active" data-index="0">
+                    <h3>Interactive VR Environments</h3>
+                    <p>Step inside realistic career settings and inhabit a day in the life.</p>
+                </div>
+                <div class="feature-step" data-index="1">
+                    <h3>Personalized Storytelling</h3>
+                    <p>AI builds narrative branches that adapt to your choices, strengths, and interests.</p>
+                </div>
+                <div class="feature-step" data-index="2">
+                    <h3>Education–Workforce Bridge</h3>
+                    <p>See exactly how classes, internships, and experiences map into real career paths.</p>
+                </div>
+                <div class="feature-step" data-index="3">
+                    <h3>Career Insights Analytics</h3>
+                    <p>Surface patterns in what you enjoy, where you excel, and where opportunities live.</p>
+                </div>
+                <div class="feature-step" data-index="4">
+                    <h3>Adaptive Learning Paths</h3>
+                    <p>Your journey refines as you go, unlocking new paths instead of locking you in.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
-        <section class="immersive-preview">
-            <div class="container">
-                <div class="preview-content">
-                    <h2 class="section-title">Explore Careers Through Immersive VR</h2>
-                    <p>Hear from career experts and students who believe the transformative nature of virtual and
-                        augmented reality technology to help career paths.</p>
-                </div>
-                <div class="vr-preview-box">
-                    <div class="vr-overlay"></div>
-                </div>
-            </div>
-        </section>
+
+
 
         <section id="how-it-works" class="how-it-works">
             <div class="container">
@@ -157,8 +172,17 @@
             </div>
         </section>
 
-        <section id="testimonials" class="testimonials">
-            <div class="container">
+
+<section id="testimonials" class="testimonials">
+    <div class="container">
+
+        <div class="testimonials-header text-center">
+            <h2 class="section-title">Explore Careers Through Immersive VR</h2>
+            <p class="section-subtitle">
+                Hear from career experts and students who believe the transformative nature 
+                of virtual and augmented reality technology helps shape career paths.
+            </p>
+
                 <div class="testimonial-featured">
                     <div class="testimonial-content">
                         <blockquote>"Students really do appreciate having immersive experience."</blockquote>
@@ -215,7 +239,51 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
     <script src="script.js"></script>
+    <script>
+const scriptURL = "https://script.google.com/macros/s/AKfycbwpxjl_0jHOWTVSTalX6kGudW3OOHrKOf_U34EIknJqyjuyC4b8NounJ1UqRyJpv97e/exec";
+
+document.getElementById("waitlistForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const school = document.getElementById("school").value;
+
+  const msg = document.getElementById("msg");
+  msg.textContent = "Submitting...";
+  msg.style.color = "#2d6a4f";
+
+  try {
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("school", school);
+
+    const res = await fetch(scriptURL, {
+      method: "POST",
+      body: formData
+    });
+
+    if (res.ok) {
+      msg.textContent = "You're on the list!";
+      msg.style.color = "#2d6a4f";
+      document.getElementById("waitlistForm").reset();
+    } else {
+      msg.textContent = "Something went wrong. Try again or email dialupvr@gmail.com";
+      msg.style.color = "red";
+    }
+  } catch (err) {
+    msg.textContent = "Network error. Please try again.";
+    msg.style.color = "red";
+  }
+});
+</script>
+
+</body>
+</html>
+
 </body>
 
 </html>
