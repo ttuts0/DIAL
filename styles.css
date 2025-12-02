@@ -225,6 +225,17 @@ h4 {
 }
 
 /* Features */
+.features-title-image {
+    width: 100%;
+    max-width: 420px;
+    margin-top: 1.5rem;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow:
+        0 0 12px rgba(74, 222, 128, 0.2),
+        0 12px 28px rgba(0, 0, 0, 0.45);
+}
+
 .features {
     padding: var(--spacing-xl) 0;
 }
@@ -325,7 +336,7 @@ h4 {
     font-size: 0.9rem;
 }
 
-.avatar-placeholder {
+.testimonial-photo {
     width: 200px;
     height: 200px;
     background: #222;
