@@ -59,6 +59,20 @@ img {
     margin: 0 auto;
     padding: 0 var(--spacing-md);
 }
+/* Default: force one line */
+.hero-content {
+    max-width: 100%;
+}
+
+.hero-title {
+    white-space: nowrap;           /* ⭐ NEVER split the line */
+    font-size: clamp(2rem, 10vw, 6rem);  /* ⭐ AUTO-RESIZE */
+    line-height: 1.1;
+    overflow: hidden;              /* ⭐ prevents spill */
+}
+
+
+
 
 /* Typography */
 h1,
@@ -207,13 +221,13 @@ h4 {
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
 }
 
 .hero-title {
-    font-size: 5rem;
-    margin-bottom: var(--spacing-md);
-    letter-spacing: -0.02em;
+    white-space: normal;                 /* allow wrapping */
+    word-wrap: break-word;
+    overflow-wrap: anywhere;             /* prevent overflow */
+    font-size: clamp(2rem, 8vw, 5rem);   /* responsive size */
     line-height: 1.1;
 }
 
