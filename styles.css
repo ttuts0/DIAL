@@ -790,3 +790,60 @@ footer,
 section {
     background: var(--bg-gradient-start) !important;
 }
+/* ===== Simulation Preview Section ===== */
+.simulation-preview {
+  padding: 80px 20px;
+  background: var(--bg-gradient-start);
+  color: #e9fdf3;
+}
+
+.sim-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Headings readable on dark */
+.simulation-preview .section-title {
+  color: #e9fdf3 !important;
+}
+.simulation-preview .section-subtitle {
+  color: #c4e6d7 !important;
+}
+
+/* --- VIDEO FRAME WITH NO IMAGE --- */
+.sim-video-frame {
+  position: relative;
+  width: 100%;
+  height: 380px;                       /* ⭐ fixed height since no image */
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
+  backdrop-filter: blur(10px);
+  display: flex;                        /* ⭐ center play icon */
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Minimal play icon */
+.sim-play-icon {
+  font-size: 3.5rem;
+  color: rgba(255, 255, 255, 0.75);
+  user-select: none;
+}
+
+/* “coming soon” badge */
+.sim-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.45);
+  color: #0f3324;
+  font-size: 0.75rem;
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-transform: lowercase;
+  backdrop-filter: blur(6px);
+}
