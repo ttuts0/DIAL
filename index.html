@@ -42,13 +42,15 @@
         <section class="hero" id="hero">
             <div class="hero-bg"></div>
             <div class="container hero-content">
+                <span class="hero-badge">AI-Powered VR Platform</span>
                 <h1 class="hero-title">READY. CAREER. ONE!</h1>
                 <p class="hero-text">
-                    DIAL is an AI-powered VR/AR platform transforming career exploration into an immersive, story-driven
-                    experience. We solve the problem of student career confusion by letting users virtually live a "day
-                    in a life" of real professionals.
+                    Experience a day in the life of any career — before you commit. DIAL's immersive VR simulations turn career confusion into clarity.
                 </p>
-                <a href="#waitlist" class="btn btn-primary">Discover Careers</a>
+                <div class="hero-ctas">
+                    <a href="#waitlist" class="btn btn-primary">Get Early Access</a>
+                    <a href="#features" class="btn btn-ghost">See How It Works</a>
+                </div>
             </div>
         </section>
 
@@ -113,9 +115,10 @@
             <!-- LEFT SIDE -->
             <div class="features-corridor-copy">
                 <div class="features-corridor-header">
-                    <h2 class="section-title">AI-Driven<br>Career Exploration</h2>
-                    <p class="section-subtitle">
-                        Scroll to see the different ways DIAL turns “what if” careers into lived, immersive stories.
+                    <p class=”section-eyebrow”>Platform Features</p>
+                    <h2 class=”section-title”>AI-Driven<br>Career Exploration</h2>
+                    <p class=”section-subtitle”>
+                        Scroll to explore the ways DIAL turns “what if” into lived, immersive experience.
                     </p>
                 </div>
                   
@@ -167,27 +170,25 @@
 
         <section id="how-it-works" class="how-it-works">
             <div class="container">
-                <h2 class="section-title text-center">How DIAL Empowers You</h2>
-                <p class="section-subtitle text-center">Discover how DIAL immerses you in career paths through AI-driven
-                    stories.</p>
+                <p class="section-eyebrow text-center">The Process</p>
+                <h2 class="section-title text-center">How DIAL Works</h2>
+                <p class="section-subtitle text-center">Three steps from career confusion to confident clarity.</p>
 
                 <div class="steps-grid">
                     <div class="step-card">
                         <div class="step-number">1</div>
-                        <h3>Step One: Dive into Your Interests</h3>
-                        <p>Begin by selecting fields that intrigue you to customize your immersive career journey.</p>
+                        <h3>Choose Your Interests</h3>
+                        <p>Select the fields that intrigue you — DIAL builds a personalized career journey around them.</p>
                     </div>
                     <div class="step-card">
                         <div class="step-number">2</div>
-                        <h3>Step Two: Experience Careers in VR</h3>
-                        <p>Engage with interactive environments and AI narratives that simulate real-world professions.
-                        </p>
+                        <h3>Live the Career in VR</h3>
+                        <p>Step into interactive environments and AI-driven narratives that simulate real-world professions.</p>
                     </div>
                     <div class="step-card">
                         <div class="step-number">3</div>
-                        <h3>Step Three: Make Informed Decisions</h3>
-                        <p>Reflect on your experiences to choose career paths that align with your skills and future
-                            goals.</p>
+                        <h3>Decide With Confidence</h3>
+                        <p>Reflect on your experiences and choose a career path that truly fits your skills and future.</p>
                     </div>
                 </div>
                 <div class="text-center mt-large">
@@ -200,19 +201,36 @@
 
 <section id="simulation-preview" class="simulation-preview">
     <div class="container sim-container">
+        <p class="section-eyebrow text-center">Preview</p>
         <h2 class="section-title text-center">See DIAL in Action</h2>
         <p class="section-subtitle text-center">
-            A first glimpse into our VR/AR simulation experience.
-            <br><strong>Full video demo coming soon.</strong>
+            A first glimpse of what it feels like inside a DIAL career simulation.
         </p>
 
-        <div class="sim-video-frame">
-            
-            <div class="sim-play-icon">
-                ▶
-            </div>
+        <!-- Tab nav -->
+        <div class="sim-tabs">
+            <button class="sim-tab active" data-tab="video">Coming Soon</button>
+            <button class="sim-tab" data-tab="demo">Try a Demo ✦</button>
+        </div>
 
-            <div class="sim-badge">coming soon</div>
+        <!-- Tab panel: video placeholder -->
+        <div class="sim-tab-panel" id="sim-panel-video">
+            <div class="sim-video-frame">
+                <div class="sim-play-icon">▶</div>
+                <div class="sim-badge">coming soon</div>
+            </div>
+        </div>
+
+        <!-- Tab panel: iframe simulation -->
+        <div class="sim-tab-panel sim-hidden" id="sim-panel-demo">
+            <div class="sim-iframe-wrap">
+                <iframe
+                    src="https://e4123aaa-0d80-408c-b0b2-d2150390b7b8.lovable.app"
+                    title="DIAL Career Simulation"
+                    allowfullscreen
+                    allow="microphone; camera"
+                ></iframe>
+            </div>
         </div>
     </div>
 </section>
@@ -221,10 +239,10 @@
     <div class="container">
 
         <div class="testimonials-header text-center">
-            <h2 class="section-title">Explore Careers Through Immersive VR</h2>
+            <p class="section-eyebrow">Early Voices</p>
+            <h2 class="section-title">Trusted By Students & Educators</h2>
             <p class="section-subtitle">
-                Hear from career experts and students who believe the transformative nature 
-                of virtual and augmented reality technology helps shape career paths.
+                Hear from the people who inspired DIAL — and can't wait to use it.
             </p>
 
                 <div class="testimonial-featured">
@@ -270,7 +288,10 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">DIAL</div>
+                <div class="footer-logo">
+                    DIAL
+                    <div class="footer-tagline">Ready. Career. One.</div>
+                </div>
                 <div class="footer-links">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>
@@ -278,7 +299,7 @@
                 </div>
             </div>
             <div class="footer-copyright">
-                &copy; 2025 DIAL. All rights reserved.
+                &copy; 2026 DIAL. All rights reserved.
             </div>
         </div>
     </footer>
