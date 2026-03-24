@@ -273,6 +273,20 @@
     }
     .preview-actions { display: flex; justify-content: center; gap: 1rem; }
 
+    /* ── EXPERIENCE ── */
+    .experience-screen {
+      position: fixed; inset: 0; background: #000; z-index: 300;
+      display: flex; flex-direction: column;
+    }
+    .experience-header {
+      padding: 0.75rem 1.5rem; display: flex; align-items: center;
+      justify-content: space-between; flex-shrink: 0;
+      background: rgba(5,10,8,0.92); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--glass-border); position: relative; z-index: 10;
+    }
+    .experience-embed { flex: 1; position: relative; overflow: hidden; }
+    #convai-container { position: absolute; inset: 0; width: 100%; height: 100%; }
+
     @media (max-width: 640px) {
       .options-grid { grid-template-columns: repeat(2,1fr); }
       .sim-grid { grid-template-columns: 1fr; }
@@ -280,6 +294,7 @@
       .intro-stats { gap: 1rem; }
     }
   </style>
+  <script src="https://unpkg.com/@convai/experience-embed/dist/core/convai-embed.umd.js"></script>
 </head>
 <body>
 <div id="app"></div>
@@ -608,15 +623,44 @@ function previewHTML() {
   </div>`;
 }
 
+function experienceHTML() {
+  return `<div class="experience-screen">
+    <header class="experience-header">
+      ${logo()}
+      <span class="preview-sim-label">Surgical Assistant — Live Experience</span>
+      <button class="btn btn-ghost" data-a="exitExperience" style="font-size:.84rem;">${I.x} Exit</button>
+    </header>
+    <div class="experience-embed">
+      <div id="convai-container"></div>
+    </div>
+  </div>`;
+}
+
+let convaiInstance = null;
+function initConvaiExperience() {
+  const container = document.getElementById('convai-container');
+  if (!container) return;
+  if (typeof PixelStreamCore === 'undefined') {
+    container.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#9ca3af;font-size:0.95rem;">Loading experience… if this persists, check your connection.</div>';
+    return;
+  }
+  convaiInstance = new PixelStreamCore.PixelStreamClient({
+    expId: '6085727f-aae0-4910-827f-cf3ac70e97ef',
+    container: container,
+  });
+  convaiInstance.initializeExperience();
+}
+
 // ── RENDER ──
 function render() {
   const app = document.getElementById('app');
   switch (state.screen) {
-    case 'intro':     app.innerHTML = introHTML();     break;
-    case 'screening': app.innerHTML = screeningHTML(); break;
-    case 'voice':     app.innerHTML = voiceHTML();     break;
-    case 'library':   app.innerHTML = libraryHTML();   break;
-    case 'preview':   app.innerHTML = previewHTML();   break;
+    case 'intro':      app.innerHTML = introHTML();      break;
+    case 'screening':  app.innerHTML = screeningHTML();  break;
+    case 'voice':      app.innerHTML = voiceHTML();      break;
+    case 'library':    app.innerHTML = libraryHTML();    break;
+    case 'preview':    app.innerHTML = previewHTML();    break;
+    case 'experience': app.innerHTML = experienceHTML(); requestAnimationFrame(initConvaiExperience); break;
   }
 }
 
@@ -721,11 +765,16 @@ document.addEventListener('click', e => {
       set({ tunnelActive:true, modalOpen:false });
       setTimeout(() => {
         if (state.sim && state.sim.id === 'healthcare') {
-          window.location.href = 'https://x.convai.com/?xpid=6085727f-aae0-4910-827f-cf3ac70e97ef&type=unlisted';
+          set({ tunnelActive:false, screen:'experience' });
         } else {
           set({ tunnelActive:false, screen:'preview', choice:null, showResult:false, complete:false });
         }
       }, 4000);
+      break;
+
+    case 'exitExperience':
+      convaiInstance = null;
+      set({ screen:'library' });
       break;
 
     case 'pick':    set({ choice: id }); break;
